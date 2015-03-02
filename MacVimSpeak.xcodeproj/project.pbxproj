@@ -1,0 +1,416 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		824E0F6E1AA0EA2E002AC519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */; };
+		824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F6F1AA0EA2E002AC519 /* ViewController.swift */; };
+		824E0F721AA0EA2E002AC519 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824E0F711AA0EA2E002AC519 /* Images.xcassets */; };
+		824E0F751AA0EA2E002AC519 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824E0F731AA0EA2E002AC519 /* Main.storyboard */; };
+		824E0F811AA0EA2E002AC519 /* MacVimSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */; };
+		824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F8A1AA507A8002AC519 /* Grammar.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		824E0F7B1AA0EA2E002AC519 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 824E0F601AA0EA2E002AC519 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 824E0F671AA0EA2E002AC519;
+			remoteInfo = MacVimSpeak;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		824E0F681AA0EA2E002AC519 /* MacVimSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVimSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		824E0F6C1AA0EA2E002AC519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		824E0F6F1AA0EA2E002AC519 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		824E0F711AA0EA2E002AC519 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		824E0F741AA0EA2E002AC519 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		824E0F7A1AA0EA2E002AC519 /* MacVimSpeakTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacVimSpeakTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		824E0F7F1AA0EA2E002AC519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVimSpeakTests.swift; sourceTree = "<group>"; };
+		824E0F8A1AA507A8002AC519 /* Grammar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		824E0F651AA0EA2E002AC519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		824E0F771AA0EA2E002AC519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		824E0F5F1AA0EA2E002AC519 = {
+			isa = PBXGroup;
+			children = (
+				824E0F6A1AA0EA2E002AC519 /* MacVimSpeak */,
+				824E0F7D1AA0EA2E002AC519 /* MacVimSpeakTests */,
+				824E0F691AA0EA2E002AC519 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		824E0F691AA0EA2E002AC519 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				824E0F681AA0EA2E002AC519 /* MacVimSpeak.app */,
+				824E0F7A1AA0EA2E002AC519 /* MacVimSpeakTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		824E0F6A1AA0EA2E002AC519 /* MacVimSpeak */ = {
+			isa = PBXGroup;
+			children = (
+				824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */,
+				824E0F6F1AA0EA2E002AC519 /* ViewController.swift */,
+				824E0F711AA0EA2E002AC519 /* Images.xcassets */,
+				824E0F731AA0EA2E002AC519 /* Main.storyboard */,
+				824E0F6B1AA0EA2E002AC519 /* Supporting Files */,
+				824E0F8A1AA507A8002AC519 /* Grammar.swift */,
+			);
+			path = MacVimSpeak;
+			sourceTree = "<group>";
+		};
+		824E0F6B1AA0EA2E002AC519 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				824E0F6C1AA0EA2E002AC519 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		824E0F7D1AA0EA2E002AC519 /* MacVimSpeakTests */ = {
+			isa = PBXGroup;
+			children = (
+				824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */,
+				824E0F7E1AA0EA2E002AC519 /* Supporting Files */,
+			);
+			path = MacVimSpeakTests;
+			sourceTree = "<group>";
+		};
+		824E0F7E1AA0EA2E002AC519 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				824E0F7F1AA0EA2E002AC519 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		824E0F671AA0EA2E002AC519 /* MacVimSpeak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 824E0F841AA0EA2E002AC519 /* Build configuration list for PBXNativeTarget "MacVimSpeak" */;
+			buildPhases = (
+				824E0F641AA0EA2E002AC519 /* Sources */,
+				824E0F651AA0EA2E002AC519 /* Frameworks */,
+				824E0F661AA0EA2E002AC519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacVimSpeak;
+			productName = MacVimSpeak;
+			productReference = 824E0F681AA0EA2E002AC519 /* MacVimSpeak.app */;
+			productType = "com.apple.product-type.application";
+		};
+		824E0F791AA0EA2E002AC519 /* MacVimSpeakTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 824E0F871AA0EA2E002AC519 /* Build configuration list for PBXNativeTarget "MacVimSpeakTests" */;
+			buildPhases = (
+				824E0F761AA0EA2E002AC519 /* Sources */,
+				824E0F771AA0EA2E002AC519 /* Frameworks */,
+				824E0F781AA0EA2E002AC519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				824E0F7C1AA0EA2E002AC519 /* PBXTargetDependency */,
+			);
+			name = MacVimSpeakTests;
+			productName = MacVimSpeakTests;
+			productReference = 824E0F7A1AA0EA2E002AC519 /* MacVimSpeakTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		824E0F601AA0EA2E002AC519 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "The Webivore";
+				TargetAttributes = {
+					824E0F671AA0EA2E002AC519 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					824E0F791AA0EA2E002AC519 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 824E0F671AA0EA2E002AC519;
+					};
+				};
+			};
+			buildConfigurationList = 824E0F631AA0EA2E002AC519 /* Build configuration list for PBXProject "MacVimSpeak" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 824E0F5F1AA0EA2E002AC519;
+			productRefGroup = 824E0F691AA0EA2E002AC519 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				824E0F671AA0EA2E002AC519 /* MacVimSpeak */,
+				824E0F791AA0EA2E002AC519 /* MacVimSpeakTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		824E0F661AA0EA2E002AC519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824E0F721AA0EA2E002AC519 /* Images.xcassets in Resources */,
+				824E0F751AA0EA2E002AC519 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		824E0F781AA0EA2E002AC519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		824E0F641AA0EA2E002AC519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */,
+				824E0F6E1AA0EA2E002AC519 /* AppDelegate.swift in Sources */,
+				824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		824E0F761AA0EA2E002AC519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				824E0F811AA0EA2E002AC519 /* MacVimSpeakTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		824E0F7C1AA0EA2E002AC519 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 824E0F671AA0EA2E002AC519 /* MacVimSpeak */;
+			targetProxy = 824E0F7B1AA0EA2E002AC519 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		824E0F731AA0EA2E002AC519 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				824E0F741AA0EA2E002AC519 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		824E0F821AA0EA2E002AC519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		824E0F831AA0EA2E002AC519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		824E0F851AA0EA2E002AC519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacVimSpeak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		824E0F861AA0EA2E002AC519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = MacVimSpeak/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		824E0F881AA0EA2E002AC519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacVimSpeakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacVimSpeak.app/Contents/MacOS/MacVimSpeak";
+			};
+			name = Debug;
+		};
+		824E0F891AA0EA2E002AC519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MacVimSpeakTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacVimSpeak.app/Contents/MacOS/MacVimSpeak";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		824E0F631AA0EA2E002AC519 /* Build configuration list for PBXProject "MacVimSpeak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824E0F821AA0EA2E002AC519 /* Debug */,
+				824E0F831AA0EA2E002AC519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		824E0F841AA0EA2E002AC519 /* Build configuration list for PBXNativeTarget "MacVimSpeak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824E0F851AA0EA2E002AC519 /* Debug */,
+				824E0F861AA0EA2E002AC519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		824E0F871AA0EA2E002AC519 /* Build configuration list for PBXNativeTarget "MacVimSpeakTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				824E0F881AA0EA2E002AC519 /* Debug */,
+				824E0F891AA0EA2E002AC519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 824E0F601AA0EA2E002AC519 /* Project object */;
+}

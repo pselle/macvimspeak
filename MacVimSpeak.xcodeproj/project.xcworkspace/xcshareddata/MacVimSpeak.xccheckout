@@ -10,31 +10,31 @@
 	<string>MacVimSpeak</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>548C0CBE68BCE796218870F1415C001297172A27</key>
-		<string>https://github.com/pselle/iOS-playground.git</string>
+		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
+		<string>https://github.com/pselle/macvimspeak.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MacVimSpeak/MacVimSpeak/MacVimSpeak.xcodeproj</string>
+	<string>MacVimSpeak.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>548C0CBE68BCE796218870F1415C001297172A27</key>
-		<string>../../../..</string>
+		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/pselle/iOS-playground.git</string>
+	<string>https://github.com/pselle/macvimspeak.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>548C0CBE68BCE796218870F1415C001297172A27</string>
+	<string>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>548C0CBE68BCE796218870F1415C001297172A27</string>
+			<string>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>iOS-playground</string>
+			<string>MacVimSpeak</string>
 		</dict>
 	</array>
 </dict>

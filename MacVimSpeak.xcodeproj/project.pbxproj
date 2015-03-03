@@ -13,6 +13,7 @@
 		824E0F751AA0EA2E002AC519 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824E0F731AA0EA2E002AC519 /* Main.storyboard */; };
 		824E0F811AA0EA2E002AC519 /* MacVimSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */; };
 		824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F8A1AA507A8002AC519 /* Grammar.swift */; };
+		8279712E1AA656210091B8DC /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279712D1AA656210091B8DC /* KeyCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		824E0F7F1AA0EA2E002AC519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVimSpeakTests.swift; sourceTree = "<group>"; };
 		824E0F8A1AA507A8002AC519 /* Grammar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
+		8279712D1AA656210091B8DC /* KeyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				824E0F731AA0EA2E002AC519 /* Main.storyboard */,
 				824E0F6B1AA0EA2E002AC519 /* Supporting Files */,
 				824E0F8A1AA507A8002AC519 /* Grammar.swift */,
+				8279712D1AA656210091B8DC /* KeyCode.swift */,
 			);
 			path = MacVimSpeak;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8279712E1AA656210091B8DC /* KeyCode.swift in Sources */,
 				824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */,
 				824E0F6E1AA0EA2E002AC519 /* AppDelegate.swift in Sources */,
 				824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */,
@@ -401,6 +405,7 @@
 				824E0F861AA0EA2E002AC519 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		824E0F871AA0EA2E002AC519 /* Build configuration list for PBXNativeTarget "MacVimSpeakTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +414,7 @@
 				824E0F891AA0EA2E002AC519 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

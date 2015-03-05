@@ -22,7 +22,7 @@
 
 import Foundation
 
-enum KeyCode:CGKeyCode{
+enum KeyCode:CGKeyCode {
     case A                    = 0x00
     case S                    = 0x01
     case D                    = 0x02

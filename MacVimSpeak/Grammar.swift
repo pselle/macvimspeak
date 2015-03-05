@@ -94,4 +94,3 @@ func executeKey(key: KeyCode) {
 
 //Word \((.*?),\s*?(.*?),\s*?(.*?)\)
 
-let one = Word(saying: "one", expression: "1")

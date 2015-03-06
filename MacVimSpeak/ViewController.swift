@@ -30,7 +30,6 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         speechListener.commands = vimCommands.keys.array //["select", "word", "delete"]
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
-        println(nonCountedAction)
     }
 
     override var representedObject: AnyObject? {

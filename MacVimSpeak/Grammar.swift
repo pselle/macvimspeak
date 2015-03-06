@@ -12,42 +12,38 @@ typealias Choice = [Word]
 // I'm not 100% sure what this is, but gotta have it!
 let src = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()
 
-struct Word {
-    let say:String, keystrokes:[KeyCode]
-    init(say:String, keystrokes:[KeyCode], afterMode: Any?) {
-        self.say = say
-        self.keystrokes = keystrokes
-    }
-}
-
-enum Mode {
-    case Normal, VisualMode, Replace, Insert
-}
-
-let ones:Choice = [
-    Word (say:"one",   keystrokes:[KeyCode.One], afterMode:nil),
-    Word (say:"two",   keystrokes:[KeyCode.Two], afterMode:nil),
-    Word (say:"three", keystrokes:[KeyCode.Three], afterMode:nil),
-    Word (say:"four",  keystrokes:[KeyCode.Four], afterMode:nil),
-    Word (say:"five",  keystrokes:[KeyCode.Five], afterMode:nil),
-    Word (say:"six",   keystrokes:[KeyCode.Six], afterMode:nil),
-    Word (say:"seven", keystrokes:[KeyCode.Seven], afterMode:nil),
-    Word (say:"eight", keystrokes:[KeyCode.Eight], afterMode:nil),
-    Word (say: "nine", keystrokes: [KeyCode.Nine], afterMode: nil)
+// Numbers must be said separately before their following motion, ex. "One" ... "Go"
+let ones = [
+    "one"  : [KeyCode.One],
+    "two"  : [KeyCode.Two],
+    "three": [KeyCode.Three],
+    "four" : [KeyCode.Four],
+    "five" : [KeyCode.Five],
+    "six"  : [KeyCode.Six],
+    "seven": [KeyCode.Seven],
+    "eight": [KeyCode.Eight],
+    "nine": [KeyCode.Nine],
 ]
 
-let vimCommands = [
+let teens = [
+    "ten"   : [KeyCode.One, KeyCode.Zero],
+    "eleven": [KeyCode.One, KeyCode.One],
+    "twelve": [KeyCode.One, KeyCode.Two],
+    "thirteen" : [KeyCode.One, KeyCode.Three]
+    // etc.
+]
+
+let something = [
     "select": [KeyCode.V],
     "word": [KeyCode.W],
     "delete": [KeyCode.D],
-    "duplicate-line": [KeyCode.Y, KeyCode.Y, KeyCode.P]
+    "duplicate-line": [KeyCode.Y, KeyCode.Y, KeyCode.P],
+    "go": [KeyCode.G, KeyCode.G] // gg
+
     // "big-word" : [(KeyCode.Shift,KeyCode.W)]
 ]
 
-let myCommands = ones.map {
-    (var num) -> String in
-    return num.say
-}
+let vimCommands = ones // Import Dollar and use .merge to merge the dictionaries!
 
 func executeKeyCommands(keys: [KeyCode]) {
     for key in keys {

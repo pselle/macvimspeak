@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82490EFA1AA90AB300F87B00 /* Grammar2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82490EF91AA90AB300F87B00 /* Grammar2.swift */; };
 		824E0F6E1AA0EA2E002AC519 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */; };
 		824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F6F1AA0EA2E002AC519 /* ViewController.swift */; };
 		824E0F721AA0EA2E002AC519 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824E0F711AA0EA2E002AC519 /* Images.xcassets */; };
@@ -28,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		82490EF91AA90AB300F87B00 /* Grammar2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar2.swift; sourceTree = "<group>"; };
 		824E0F681AA0EA2E002AC519 /* MacVimSpeak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacVimSpeak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824E0F6C1AA0EA2E002AC519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				824E0F6B1AA0EA2E002AC519 /* Supporting Files */,
 				824E0F8A1AA507A8002AC519 /* Grammar.swift */,
 				8279712D1AA656210091B8DC /* KeyCode.swift */,
-				82490EF91AA90AB300F87B00 /* Grammar2.swift */,
 			);
 			path = MacVimSpeak;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 			files = (
 				8279712E1AA656210091B8DC /* KeyCode.swift in Sources */,
 				824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */,
-				82490EFA1AA90AB300F87B00 /* Grammar2.swift in Sources */,
 				824E0F6E1AA0EA2E002AC519 /* AppDelegate.swift in Sources */,
 				824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */,
 			);

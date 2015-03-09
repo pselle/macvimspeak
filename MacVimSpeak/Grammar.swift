@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import Dollar
+
 typealias Choice = [Word]
 typealias Word = [KeyCode]
 
@@ -44,7 +46,7 @@ let something = [
     // "big-word" : [(KeyCode.Shift,KeyCode.W)]
 ]
 
-let vimCommands = ones // Import Dollar and use .merge to merge the dictionaries!
+let vimCommands = $.merge(ones, teens, something)
 
 func executeKeyCommands(keys: [KeyCode]) {
     for key in keys {

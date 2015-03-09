@@ -14,6 +14,7 @@
 		824E0F811AA0EA2E002AC519 /* MacVimSpeakTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */; };
 		824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F8A1AA507A8002AC519 /* Grammar.swift */; };
 		8279712E1AA656210091B8DC /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279712D1AA656210091B8DC /* KeyCode.swift */; };
+		82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 824E0F671AA0EA2E002AC519;
 			remoteInfo = MacVimSpeak;
+		};
+		82CCB99D1AADFA8700D6B9D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 92E0D03C19467C67002ACC3D;
+			remoteInfo = Dollar;
+		};
+		82CCB99F1AADFA8700D6B9D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 92E6686F19F09C6400BB4FB8;
+			remoteInfo = DollarTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -38,6 +53,7 @@
 		824E0F801AA0EA2E002AC519 /* MacVimSpeakTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacVimSpeakTests.swift; sourceTree = "<group>"; };
 		824E0F8A1AA507A8002AC519 /* Grammar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
 		8279712D1AA656210091B8DC /* KeyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
+		82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dollar.xcodeproj; path = Dollar.swift/Dollar/Dollar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +81,7 @@
 				824E0F6A1AA0EA2E002AC519 /* MacVimSpeak */,
 				824E0F7D1AA0EA2E002AC519 /* MacVimSpeakTests */,
 				824E0F691AA0EA2E002AC519 /* Products */,
+				82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +131,15 @@
 				824E0F7F1AA0EA2E002AC519 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		82CCB9991AADFA8600D6B9D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */,
+				82CCB9A01AADFA8700D6B9D2 /* DollarTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +209,12 @@
 			mainGroup = 824E0F5F1AA0EA2E002AC519;
 			productRefGroup = 824E0F691AA0EA2E002AC519 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 82CCB9991AADFA8600D6B9D2 /* Products */;
+					ProjectRef = 82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				824E0F671AA0EA2E002AC519 /* MacVimSpeak */,
@@ -189,6 +222,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Dollar.framework;
+			remoteRef = 82CCB99D1AADFA8700D6B9D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		82CCB9A01AADFA8700D6B9D2 /* DollarTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DollarTests.xctest;
+			remoteRef = 82CCB99F1AADFA8700D6B9D2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		824E0F661AA0EA2E002AC519 /* Resources */ = {

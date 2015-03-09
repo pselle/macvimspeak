@@ -10,6 +10,8 @@
 	<string>MacVimSpeak</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>4E2F5E824C021282D3F5789E108FCDC580F66A19</key>
+		<string>https://github.com/ankurp/Dollar.swift.git</string>
 		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
 		<string>https://github.com/pselle/macvimspeak.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>MacVimSpeak.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>4E2F5E824C021282D3F5789E108FCDC580F66A19</key>
+		<string>../../Dollar.swift/</string>
 		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
 		<string>../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4E2F5E824C021282D3F5789E108FCDC580F66A19</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Dollar.swift</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

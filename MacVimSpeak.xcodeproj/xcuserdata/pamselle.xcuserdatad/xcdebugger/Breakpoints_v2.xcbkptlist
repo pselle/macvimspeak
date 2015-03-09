@@ -15,6 +15,36 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_func6"
+                  moduleName = "MacVimSpeak"
+                  urlString = "file:///Users/pamselle/Projects/MacVimSpeak/MacVimSpeak/Grammar.swift"
+                  timestampString = "447634111.26567"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MacVimSpeak.navigate.mutableAddressor : Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
+                  moduleName = "MacVimSpeak"
+                  urlString = "file:///Users/pamselle/Projects/MacVimSpeak/MacVimSpeak/Grammar.swift"
+                  timestampString = "447634111.267396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,6 +8,7 @@
 
 import Foundation
 typealias Choice = [Word]
+typealias Word = [KeyCode]
 
 // I'm not 100% sure what this is, but gotta have it!
 let src = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()

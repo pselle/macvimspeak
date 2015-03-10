@@ -1,0 +1,4 @@
+github "robrix/Box" "1.1.0"
+github "robrix/Either" "1.1"
+github "robrix/Madness" "0.0.2"
+github "robrix/Prelude" "1.4"

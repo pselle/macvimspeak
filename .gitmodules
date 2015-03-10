@@ -1,9 +1,3 @@
-[submodule "Carthage/Checkouts/SwiftTask"]
-	path = Carthage/Checkouts/SwiftTask
-	url = https://github.com/ReactKit/SwiftTask.git
-[submodule "Carthage/Checkouts/ReactKit"]
-	path = Carthage/Checkouts/ReactKit
-	url = https://github.com/ReactKit/ReactKit.git
 [submodule "Dollar.swift"]
 	path = Dollar.swift
 	url = https://github.com/ankurp/Dollar.swift.git

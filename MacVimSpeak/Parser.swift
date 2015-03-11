@@ -9,7 +9,7 @@
 import Foundation
 
 // from http://benscheirman.com/2014/06/regex-in-swift/
-class Regex {
+public class Regex {
     let internalExpression: NSRegularExpression
     let pattern: String
     
@@ -25,7 +25,7 @@ class Regex {
     }
 }
 
-func myParser(keyset:String) {
+public func Parser(keyset:String) {
     for c in keyset {
         if Regex("[a-z]").test(String(c)) {
             println("cats")

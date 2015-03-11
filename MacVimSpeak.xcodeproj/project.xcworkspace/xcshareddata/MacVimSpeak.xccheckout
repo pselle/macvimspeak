@@ -14,6 +14,10 @@
 		<string>https://github.com/ankurp/Dollar.swift.git</string>
 		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
 		<string>https://github.com/pselle/macvimspeak.git</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>https://github.com/Quick/Nimble.git</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>https://github.com/Quick/Quick.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MacVimSpeak.xcodeproj</string>
@@ -23,6 +27,10 @@
 		<string>../../Dollar.swift</string>
 		<key>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</key>
 		<string>../..</string>
+		<key>95438028B10BBB846574013D29F154A00556A9D1</key>
+		<string>../../Vendor/Nimble</string>
+		<key>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</key>
+		<string>../../Vendor/Quick</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/pselle/macvimspeak.git</string>
@@ -47,6 +55,22 @@
 			<string>54BC7E7A472322A0CAF9D95AB4219B263A581E8B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MacVimSpeak</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>95438028B10BBB846574013D29F154A00556A9D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Nimble</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D0725CAC6FF2D66F2C83C2C48DC12106D42DAA64</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Quick</string>
 		</dict>
 	</array>
 </dict>

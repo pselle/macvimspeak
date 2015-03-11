@@ -8,6 +8,7 @@
 
 import Cocoa
 import XCTest
+import MacVimSpeak
 
 class MacVimSpeakTests: XCTestCase {
     
@@ -25,6 +26,12 @@ class MacVimSpeakTests: XCTestCase {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
     }
+    
+    func testRegex() {
+        //XCTAssert(Parser("a12") == "a", "Hello!")
+        XCTAssertEqual(Parser("a12"), "a", "Hello!")
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

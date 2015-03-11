@@ -193,9 +193,9 @@ let navigate = [
     "again":                          ";",
     "again-reversed":                 ",",
     "down-sentence":                  ")",
-    "up-sentence":                    "(",
+    "up-sentence":                    "(", // <LeftParetheses>
     "down-paragraph":                 "}",
-    "up-paragraph":                   "{",
+    "up-paragraph":                   "{", // <
     "start-of-next-section":          "]]",
     "start-of-previous-section":      "[[",
     "end-of-next-section":            "][",
@@ -209,7 +209,7 @@ let navigate = [
     "cursor-last":                    "L",
     "start-of-document":              "gg",
     "end-of-document":                "G",
-    "retrace-movements":              "<C-o>",
+    "retrace-movements":              "<C-o>", // <Control-[letter]>
     "retrace-movements-forward":      "<C-i>",
 ]
 

@@ -30,8 +30,6 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         speechListener.commands = vimCommands
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
-        
-        println(completeCommands)
     }
 
     override var representedObject: AnyObject? {

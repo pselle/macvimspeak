@@ -342,29 +342,36 @@ func mapDict<T, U>(myDict:[String:T], f: T -> U) -> [String:U] {
 
 let vimCommands = $.merge(completeCommands).keys.array //ones, teens, something)
 
-func executeSingleKeyCommands(keys: [UInt16]) {
-    for key in keys {
-        executeKey(key)
-    }
-}
 
 func executeKeyCommands(keys: [KeySet]) {
+    println("===============ExecuteKeyCommands called")
     for keySet in keys {
-        if(keySet.count == 1) {
-            executeSingleKeyCommands(keySet)
-        }
-        else {
-            println("PUNT")
-        }
+            println("key set is", keySet)
+            executeMultiKey(keySet)
     }
 }
 
+func executeMultiKey(keys: [UInt16]) {
+    println("pressing keys")
+    pressKeys(keys)
+    liftKeys(keys)
+}
 
-func executeKey(key: UInt16) {
-    let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
-    let keyUp = CGEventCreateKeyboardEvent(src, key, false).takeRetainedValue()
-    CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
-    CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyUp)
+func pressKeys(keys:[UInt16]) {
+    for key in keys {
+        println("Down", key)
+        let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
+        CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
+    }
+}
+
+func liftKeys(keys:[UInt16]) {
+    for key in keys {
+        println("Up", key)
+        let keyUp = CGEventCreateKeyboardEvent(src, key, false).takeRetainedValue()
+        CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyUp)
+        
+    }
 }
 
 

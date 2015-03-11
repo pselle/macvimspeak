@@ -29,7 +29,8 @@ class MacVimSpeakTests: XCTestCase {
     
     func testRegex() {
         //XCTAssert(Parser("a12") == "a", "Hello!")
-        XCTAssertEqual(Parser("a12"), "a", "Hello!")
+        XCTAssertEqual(Parser("abc"), "cats", "Choice words")
+        XCTAssertEqual(2, 2, "hello")
     }
     
     

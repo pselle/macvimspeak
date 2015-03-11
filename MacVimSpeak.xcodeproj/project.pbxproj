@@ -16,8 +16,6 @@
 		824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F8A1AA507A8002AC519 /* Grammar.swift */; };
 		8279712E1AA656210091B8DC /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279712D1AA656210091B8DC /* KeyCode.swift */; };
 		82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
-		82E9CDBA1AB092160085B2D6 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E9CDA21AB091E00085B2D6 /* Nimble.framework */; };
-		82E9CDBB1AB092160085B2D6 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82E9CDAF1AB091E90085B2D6 /* Quick.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,8 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E9CDBA1AB092160085B2D6 /* Nimble.framework in Frameworks */,
-				82E9CDBB1AB092160085B2D6 /* Quick.framework in Frameworks */,
 				82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

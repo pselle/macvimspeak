@@ -25,12 +25,13 @@ public class Regex {
     }
 }
 
-public func Parser(keyset:String) {
+public func Parser(keyset:String) -> String {
     for c in keyset {
         if Regex("[a-z]").test(String(c)) {
             println("cats")
         }
     }
+    return "cats"
 }
 // handle modifier key sequences:
 // special = mystring.match(<.*>)

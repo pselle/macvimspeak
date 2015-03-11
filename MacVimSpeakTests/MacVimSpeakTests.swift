@@ -27,13 +27,25 @@ class MacVimSpeakTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
-    func testRegex() {
-        //XCTAssert(Parser("a12") == "a", "Hello!")
-        XCTAssertEqual(Parser("abc"), "cats", "Choice words")
-        XCTAssertEqual(2, 2, "hello")
+    func testParserWithLowerCaseLetters() {
+        let parsed = Parser("abc")
+        let output: Array<KeySet> = [[0], [11], [8]]
+        println(parsed)
+        println(output)
+        XCTAssertEqual(parsed[0][0], output[0][0], "Parser returns keycode set for lowercase letters")
+        XCTAssertEqual(parsed[1][0], output[1][0], "Parser returns keycode set for lowercase letters")
     }
-    
-    
+
+    func testParserWithUpperCaseLetters() {
+        let parsed = Parser("gV")
+        let output: Array<KeySet> = [[5], [56, 9]]
+        println(parsed)
+        println(output)
+        XCTAssertEqual(parsed[0][0], output[0][0], "Parser returns keycode set for uppercase letters")
+        XCTAssertEqual(parsed[1][0], output[1][0], "Parser returns keycode set for uppercase letters")
+        XCTAssertEqual(parsed[1][1], output[1][1], "Parser returns keycode set for uppercase letters")
+    }
+
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock() {

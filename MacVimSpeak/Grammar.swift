@@ -9,42 +9,39 @@
 import Foundation
 import Dollar
 
-typealias Choice = [Word]
-typealias Word = [KeyCode]
-
 // I'm not 100% sure what this is, but gotta have it!
 let src = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()
 
 // Numbers must be said separately before their following motion, ex. "One" ... "Go"
-let ones = [
-    "one"  : [KeyCode.One],
-    "two"  : [KeyCode.Two],
-    "three": [KeyCode.Three],
-    "four" : [KeyCode.Four],
-    "five" : [KeyCode.Five],
-    "six"  : [KeyCode.Six],
-    "seven": [KeyCode.Seven],
-    "eight": [KeyCode.Eight],
-    "nine": [KeyCode.Nine],
-]
-
-let teens = [
-    "ten"   : [KeyCode.One, KeyCode.Zero],
-    "eleven": [KeyCode.One, KeyCode.One],
-    "twelve": [KeyCode.One, KeyCode.Two],
-    "thirteen" : [KeyCode.One, KeyCode.Three]
-    // etc.
-]
-
-let something = [
-    "select": [KeyCode.V],
-    "word": [KeyCode.W],
-    "delete": [KeyCode.D],
-    "duplicate-line": [KeyCode.Y, KeyCode.Y, KeyCode.P],
-    "go": [KeyCode.G, KeyCode.G] // gg
-
-    // "big-word" : [(KeyCode.Shift,KeyCode.W)]
-]
+//let ones = [
+//    "one"  : [KeyCode.One],
+//    "two"  : [KeyCode.Two],
+//    "three": [KeyCode.Three],
+//    "four" : [KeyCode.Four],
+//    "five" : [KeyCode.Five],
+//    "six"  : [KeyCode.Six],
+//    "seven": [KeyCode.Seven],
+//    "eight": [KeyCode.Eight],
+//    "nine": [KeyCode.Nine],
+//]
+//
+//let teens = [
+//    "ten"   : [KeyCode.One, KeyCode.Zero],
+//    "eleven": [KeyCode.One, KeyCode.One],
+//    "twelve": [KeyCode.One, KeyCode.Two],
+//    "thirteen" : [KeyCode.One, KeyCode.Three]
+//    // etc.
+//]
+//
+//let something = [
+//    "select": [KeyCode.V],
+//    "word": [KeyCode.W],
+//    "delete": [KeyCode.D],
+//    "duplicate-line": [KeyCode.Y, KeyCode.Y, KeyCode.P],
+//    "go": [KeyCode.G, KeyCode.G] // gg
+//
+//    // "big-word" : [(KeyCode.Shift,KeyCode.W)]
+//]
 
 
 let letter = [
@@ -330,18 +327,42 @@ let insertCommands = [
     "return": "<enter>"
 ]
 
-let vimCommands = $.merge(ones, teens, something)
+let mergedCommands = $.merge(letter) //ones, teens, something)
 
-func executeKeyCommands(keys: [KeyCode]) {
+let completeCommands = mapDict(mergedCommands, Parser)
+
+
+func mapDict<T, U>(myDict:[String:T], f: T -> U) -> [String:U] {
+    var newDict = [String: U]()
+    for (key, val) in myDict {
+        newDict[key] = f(val)
+    }
+    return newDict
+}
+
+let vimCommands = $.merge(completeCommands).keys.array //ones, teens, something)
+
+func executeSingleKeyCommands(keys: [UInt16]) {
     for key in keys {
         executeKey(key)
     }
 }
 
+func executeKeyCommands(keys: [KeySet]) {
+    for keySet in keys {
+        if(keySet.count == 1) {
+            executeSingleKeyCommands(keySet)
+        }
+        else {
+            println("PUNT")
+        }
+    }
+}
 
-func executeKey(key: KeyCode) {
-    let keyDown = CGEventCreateKeyboardEvent(src, key.rawValue, true).takeRetainedValue()
-    let keyUp = CGEventCreateKeyboardEvent(src, key.rawValue, false).takeRetainedValue()
+
+func executeKey(key: UInt16) {
+    let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
+    let keyUp = CGEventCreateKeyboardEvent(src, key, false).takeRetainedValue()
     CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
     CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyUp)
 }

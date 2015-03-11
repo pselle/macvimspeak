@@ -27,9 +27,11 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        speechListener.commands = vimCommands.keys.array //["select", "word", "delete"]
+        speechListener.commands = vimCommands
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
+        
+        println(completeCommands)
     }
 
     override var representedObject: AnyObject? {
@@ -40,7 +42,19 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
 
     func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: AnyObject?) {
         println("Got to speech recognizer")
-        executeKeyCommands(vimCommands[command as String]!)
+        // if state is awake and command is Shush
+        // Change commands to "Yo" to wake up
+        // set state to sleep
+        
+        // else
+        if let keyStrokes = completeCommands[command as String] {
+            executeKeyCommands(keyStrokes)
+        } else {
+            println("Command not found!")
+        }
+        
+        // else state is asleep
+        // if command is Yo, then wake up and set commands to the commands
 
         if(command as String == "hello") {
             s.startSpeakingString("Hello Pam")

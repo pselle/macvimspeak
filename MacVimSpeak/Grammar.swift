@@ -213,8 +213,8 @@ let navigate = [
 let edit = [
     "change":        "c",
     "delete":        "d",
-    "indent":        ">",
-    "unindent":      "<",
+   // "indent":        "<", requires a lookback, or its own func
+    "unindent":      ">",
     "join":          "J",
     "format":        "=",
     "put":           "p",
@@ -316,18 +316,18 @@ let commandLine = [
 ]
 
 let insertCommands = [
-    "undo": "(^o)u",
-    "complete": "<C-n>",
-    "complete-next": "<C-n>",
-    "complete-previous": "<C-p>",
-    "space": "<space>",
-    "backspace": "<backspace>",
-    "tab": "<tab>",
-    "enter": "<enter>",
-    "return": "<enter>"
+    //"undo": "(^o)u",
+    "complete": "<Control-n>",
+    "complete-next": "<Control-n>",
+    "complete-previous": "<Control-p>",
+    "space": "<Space>",
+    "backspace": "<Backspace>",
+    "tab": "<Tab>",
+    "enter": "<KeypadEnter>",
+    "return": "<KeypadEnter>"
 ]
 
-let mergedCommands = $.merge(letter) //ones, teens, something)
+let mergedCommands = $.merge(insertCommands) //letter //ones, teens, something)
 
 let completeCommands = mapDict(mergedCommands, Parser)
 

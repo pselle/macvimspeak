@@ -25,26 +25,6 @@ public class Regex {
     }
 }
 
-//let internalExpression: NSRegularExpression?
-//let pattern: String
-//
-//init(_ pattern: String) {
-//    self.pattern = pattern
-//    var error: NSError?
-//    self.internalExpression = NSRegularExpression(pattern: pattern, options: nil, error: &error)
-//}
-//
-//func test(input: String) -> Bool {
-//    var matched:Bool
-//    if let internalExpression = self.internalExpression as NSRegularExpression! {
-//        let matches = internalExpression.matchesInString(input, options: nil, range:NSMakeRange(0, countElements(input)))
-//        matched = matches.count > 0
-//    } else {
-//        matched = false
-//    }
-//    return matched
-//}
-
 public class KeyBatch {
     public let batch:Array<UInt16>
 
@@ -61,23 +41,71 @@ public typealias KeySet = Array<UInt16>
 
 public func Parser(keyset:String) -> Array<KeySet> {
     var set: Array<KeySet> = [] // [[0x00]]
-    for c in keyset {
-        if Regex("[a-z]").test(String(c)) {
-            let keys:KeySet = KeyBatch(lookupKey(c)).batch
-            set.append(keys)
+    println("---- PARSER CALLED")
+    return inner(set, keyset)
+}
+
+public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
+    println("inner", remaining)
+    if(remaining == "") {
+        return set
+    } else {
+        var updatedSet = set
+        var nextString = ""
+        let firstChar = (remaining as NSString).substringToIndex(1)
+        if (firstChar == "<") {
+            // We have us a sequence!
+            var (u, n) = parseCombo(set, remaining) // setting this to updatedSet and nextString didn't work
+            updatedSet = u
+            println("Combo")
+            println(updatedSet)
+            nextString = n
+            // Matcher: <.*> for thing between brackets
+        } else {
+            updatedSet = checkSingleChar(firstChar, set)
+            println(updatedSet)
+            nextString = (remaining as NSString).substringFromIndex(1)
         }
+        return inner(updatedSet, nextString)
+    }
+}
+
+internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> {
+    var set: Array<KeySet> = oldSet
+    // Symbols and lowercase letters
+    if Regex("\\W?[a-z]").test(c) {
+        let keys:KeySet = KeyBatch(lookupKey(c)).batch
+        set.append(keys)
+    }
         
-        if Regex("[A-Z]").test(String(c)) {
-            let keys:KeySet = [KeyCode["Shift"]!, lookupKey(c)]
-            set.append(keys)
-        }
+    else if Regex("[A-Z]").test(c) {
+        let keys:KeySet = [KeyCode["Shift"]!, lookupKey(c)]
+        set.append(keys)
     }
     return set
 }
 
-internal func lookupKey(char: Character) -> UInt16 {
-    let lookup = String(char).uppercaseString
-    return KeyCode[lookup]!
+func parseCombo(oldSet:Array<KeySet>, string:String) -> (Array<KeySet>, String) {
+    var set = oldSet
+    let endingChar = (string as NSString).rangeOfString(">")
+    let comboString = (string as NSString).substringWithRange(NSMakeRange(1,endingChar.location-1))
+    println(comboString)
+    let comboArray = comboString.componentsSeparatedByString("-")
+    var keys:KeySet = []
+    for c in comboArray {
+        keys.append(lookupKey(c))
+    }
+    set.append(keys)
+    return (set, (string as NSString).substringFromIndex(endingChar.location+1))
+}
+
+internal func lookupKey(char: String) -> UInt16 {
+    if let keyCode = KeyCode[char] {
+        return keyCode
+    } else {
+        let lookup = char.uppercaseString
+        return KeyCode[lookup]!
+    }
 }
 // handle modifier key sequences:
 // special = mystring.match(<.*>)

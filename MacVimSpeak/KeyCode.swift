@@ -266,6 +266,14 @@ public let KeyCode: [String:UInt16] = [
     "DownArrow"                 : 0x7D,
     "UpArrow"                   : 0x7E,
 
+    // http://lists.w3.org/Archives/Public/www-dom/2010JulSep/att-0182/keyCode-spec.html
+//    ":"                         : 0xBA,
+//    ">"                         : 0xBE,
+    
+    ">"                         : 0x2F,
+    "Backspace"                 : 0x33,
+    
+
     // I"SO" keyboards only
     "Section"               : 0x0A,
 

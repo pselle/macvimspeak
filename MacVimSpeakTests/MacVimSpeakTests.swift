@@ -45,6 +45,12 @@ class MacVimSpeakTests: XCTestCase {
         XCTAssertEqual(parsed[1][0], output[1][0], "Parser returns keycode set for uppercase letters")
         XCTAssertEqual(parsed[1][1], output[1][1], "Parser returns keycode set for uppercase letters")
     }
+    
+    func testParserWithCombo() {
+        let parsed = Parser("<Shift-v>")
+        let output: Array<KeySet> = [[56, 9]]
+        XCTAssertEqual(parsed[0][0], output[0][0], "Parser returns keycode set for uppercase letters")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

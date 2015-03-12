@@ -55,12 +55,7 @@ public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
         let firstChar = (remaining as NSString).substringToIndex(1)
         if (firstChar == "<") {
             // We have us a sequence!
-            var (u, n) = parseCombo(set, remaining) // setting this to updatedSet and nextString didn't work
-            updatedSet = u
-            println("Combo")
-            println(updatedSet)
-            nextString = n
-            // Matcher: <.*> for thing between brackets
+            (updatedSet, nextString) = parseCombo(set, remaining) // setting this to updatedSet and nextString didn't work
         } else {
             updatedSet = checkSingleChar(firstChar, set)
             println(updatedSet)

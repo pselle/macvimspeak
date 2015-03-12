@@ -332,8 +332,8 @@ let mergedCommands = $.merge(letter) //ones, teens, something)
 let completeCommands = mapDict(mergedCommands, Parser)
 
 
-func mapDict<T, U>(myDict:[String:T], f: T -> U) -> [String:U] {
-    var newDict = [String: U]()
+func mapDict<S, T, U>(myDict:[S:T], f: T -> U) -> [S:U] {
+    var newDict = [S: U]()
     for (key, val) in myDict {
         newDict[key] = f(val)
     }

@@ -77,7 +77,6 @@ public func Parser(keyset:String) -> Array<KeySet> {
 
 internal func lookupKey(char: Character) -> UInt16 {
     let lookup = String(char).uppercaseString
-    println(lookup)
     return KeyCode[lookup]!
 }
 // handle modifier key sequences:

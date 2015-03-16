@@ -14,6 +14,11 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     var isSpeaking = false
     
     @IBAction func ListenButton(sender: AnyObject) {
+        toggleSpeakingStatus()
+        println("huzzah button!")
+    }
+
+    func toggleSpeakingStatus() {
         if(!isSpeaking) {
             speechListener.startListening()
             isSpeaking = true
@@ -21,15 +26,16 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
             speechListener.stopListening()
             isSpeaking = false
         }
-        println("huzzah button!")
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        speechListener.commands = vimCommands
+        speechListener.commands = vimCommands + ["shush", "quiet-you"]
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
+        speechListener.startListening()
+        isSpeaking = true
     }
 
     override var representedObject: AnyObject? {
@@ -40,20 +46,17 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
 
     func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: AnyObject?) {
         println("Got to speech recognizer")
-        // if state is awake and command is Shush
-        // Change commands to "Yo" to wake up
-        // set state to sleep
-        
-        // else
-        if let keyStrokes = completeCommands[command as String] {
-            executeKeyCommands(keyStrokes)
+        if(command as String == "shush" || command as String == "quiet-you") {
+            speechListener.commands = ["wake up"]
+        } else if (command as String == "wake up") {
+            speechListener.commands = vimCommands
         } else {
-            println("Command not found!")
+            if let keyStrokes = completeCommands[command as String] {
+                executeKeyCommands(keyStrokes)
+            } else {
+                println("Command not found!")
+            }
         }
-        // if let keyStrokes in modifierCommands executeKeyCommandsWithShift
-        
-        // else state is asleep
-        // if command is Yo, then wake up and set commands to the commands
 
         if(command as String == "hello") {
             s.startSpeakingString("Hello Pam")

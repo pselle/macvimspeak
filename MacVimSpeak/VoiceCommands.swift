@@ -158,6 +158,8 @@ struct VoiceCommands {
         "right-paren":            ")"
     ]
     
+    let symbolsRequiringShift = ["<", ">", "{", "}", ")", "(", "!", "|", ":", "`", "'", "&", "%", "?", "*", "~", "@", "$", "^", "+", "#"]
+
     let navigate = [
         "back":                           "b",
         "back-word":                      "b",
@@ -301,11 +303,11 @@ struct VoiceCommands {
         "save":                     ":w",
         "quit":                     ":q",
         "save-and-quit":            ":x",
-        "quit-without-saving":      ":q!",
-        "set-number":               ":set nu",
-        "set-no-number":            ":set nonu",
-        "set-highlight-search":     ":set hls",
-        "set-no-highlight-search":  ":set nohls"
+        "quit-without-saving":      ":q!"
+//        "set-number":               ":set nu",
+//        "set-no-number":            ":set nonu",
+//        "set-highlight-search":     ":set hls",
+//        "set-no-highlight-search":  ":set nohls"
     ]
     
     let insertCommands = [
@@ -321,7 +323,11 @@ struct VoiceCommands {
     ]
     
     init() {
-        allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands)
         // countedCommands: compose numbers + counted commands into new setof commands
+        func addEnter(s:String) -> String {
+            return s + "<Enter>"
+        }
+        let commandLineWithEnter = mapDict(commandLine, addEnter)
+        allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, commandLineWithEnter, insertCommands)
     }
 }

@@ -141,10 +141,10 @@ public let KeyCode: [String:UInt16] = [
     "UpArrow"                   : 0x7E,
     
     // The following were discovered using the Key Codes app
-    ">"                         : 0x2F,
     "Backspace"                 : 0x33,
     "Enter"                     : 0x24,
     "<"                         : 0x2B,
+    ">"                         : 0x2F,
     "{"                         : 0x21,
     "}"                         : 0x1E,
     ")"                         : 0x1D,

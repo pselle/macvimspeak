@@ -158,8 +158,6 @@ struct VoiceCommands {
         "right-paren":            ")"
     ]
     
-    let symbolsRequiringShift = ["<", ">", "{", "}", ")", "(", "!", "|", ":", "`", "'", "&", "%", "?", "*", "~", "@", "$", "^", "+", "#"]
-
     let navigate = [
         "back":                           "b",
         "back-word":                      "b",
@@ -323,11 +321,12 @@ struct VoiceCommands {
     ]
     
     init() {
-        // countedCommands: compose numbers + counted commands into new setof commands
-        func addEnter(s:String) -> String {
-            return s + "<Enter>"
-        }
+        let countedCommands = combineDictionaries(number, countedAction, "-")
         let commandLineWithEnter = mapDict(commandLine, addEnter)
-        allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, commandLineWithEnter, insertCommands)
+        allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands, commandLineWithEnter, countedCommands)
     }
+}
+
+func addEnter(s:String) -> String {
+    return s + "<Enter>"
 }

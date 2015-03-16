@@ -1,5 +1,5 @@
 //
-//  utils.swift
+//  Utils.swift
 //  MacVimSpeak
 //
 //  Created by Pam Selle on 3/16/15.

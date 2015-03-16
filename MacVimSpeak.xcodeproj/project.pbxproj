@@ -16,7 +16,7 @@
 		824E0F8B1AA507A8002AC519 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E0F8A1AA507A8002AC519 /* Grammar.swift */; };
 		8279712E1AA656210091B8DC /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279712D1AA656210091B8DC /* KeyCode.swift */; };
 		82BB31DE1AB726C5009A1686 /* VoiceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31DD1AB726C5009A1686 /* VoiceCommands.swift */; };
-		82BB31E21AB72BA8009A1686 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31E11AB72BA8009A1686 /* utils.swift */; };
+		82BB31E21AB72BA8009A1686 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31E11AB72BA8009A1686 /* Utils.swift */; };
 		82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,7 @@
 		824E0F8A1AA507A8002AC519 /* Grammar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
 		8279712D1AA656210091B8DC /* KeyCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		82BB31DD1AB726C5009A1686 /* VoiceCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceCommands.swift; sourceTree = "<group>"; };
-		82BB31E11AB72BA8009A1686 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		82BB31E11AB72BA8009A1686 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Dollar.xcodeproj; path = Dollar.swift/Dollar/Dollar.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +116,7 @@
 		824E0F6A1AA0EA2E002AC519 /* MacVimSpeak */ = {
 			isa = PBXGroup;
 			children = (
-				82BB31E01AB72B86009A1686 /* utils */,
+				82BB31E01AB72B86009A1686 /* Utils */,
 				824E0F6D1AA0EA2E002AC519 /* AppDelegate.swift */,
 				824E0F6F1AA0EA2E002AC519 /* ViewController.swift */,
 				824E0F711AA0EA2E002AC519 /* Images.xcassets */,
@@ -155,12 +155,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		82BB31E01AB72B86009A1686 /* utils */ = {
+		82BB31E01AB72B86009A1686 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				82BB31E11AB72BA8009A1686 /* utils.swift */,
+				82BB31E11AB72BA8009A1686 /* Utils.swift */,
 			);
-			name = utils;
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		82CCB9991AADFA8600D6B9D2 /* Products */ = {
@@ -296,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8279712E1AA656210091B8DC /* KeyCode.swift in Sources */,
-				82BB31E21AB72BA8009A1686 /* utils.swift in Sources */,
+				82BB31E21AB72BA8009A1686 /* Utils.swift in Sources */,
 				824E0F701AA0EA2E002AC519 /* ViewController.swift in Sources */,
 				82BB31DE1AB726C5009A1686 /* VoiceCommands.swift in Sources */,
 				823FEA4D1AAF664100B660BB /* Parser.swift in Sources */,

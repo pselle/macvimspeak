@@ -9,7 +9,7 @@
 import Foundation
 
 // from http://benscheirman.com/2014/06/regex-in-swift/, with the case-insensitve flag removed
-public class Regex {
+class Regex {
     let internalExpression: NSRegularExpression
     let pattern: String
     
@@ -25,10 +25,10 @@ public class Regex {
     }
 }
 
-public class KeyBatch {
-    public let batch:Array<UInt16>
+class KeyBatch {
+    let batch:Array<UInt16>
 
-    public init(_ keys: UInt16...) {
+    init(_ keys: UInt16...) {
         var batch:Array<UInt16> = []
         for key in keys {
             batch.append(key)
@@ -49,7 +49,7 @@ public func Parser(keyset:String) -> Array<KeySet> {
     }
 }
 
-public func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
+internal func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
     if(remaining == "") {
         return set
     } else {

@@ -213,7 +213,7 @@ let navigate = [
 let edit = [
     "change":        "c",
     "delete":        "d",
-   // "indent":        "<", requires a lookback, or its own func
+    "indent":        "<",
     "unindent":      ">",
     "join":          "J",
     "format":        "=",
@@ -259,7 +259,7 @@ let countedAction = [
     "half-page-down":           "<C-d>",
     "half-page-up":             "<C-u>",
     "indent-line":              ">>",
-    "unindent-line":            "<<",
+//    "unindent-line":            "<<", Not covered in parser atm
     "toggle-case":              "~",
 // idk what these are with the @ or whatever
 //    "comment-line":             @"\\\",
@@ -298,7 +298,7 @@ let nonCountedAction = [
     "scroll-top":            "zt",
     "scroll-middle":         "zz",
     "scroll-botton":         "zb",
-    "scroll-top-reset-cursor":    "z<enter>",
+    "scroll-top-reset-cursor":    "z<Enter>",
     "scroll-middle-reset-cursor": "z.",
     "scroll-botton-reset-cursor": "z-"
 ]
@@ -323,11 +323,11 @@ let insertCommands = [
     "space": "<Space>",
     "backspace": "<Backspace>",
     "tab": "<Tab>",
-    "enter": "<KeypadEnter>",
-    "return": "<KeypadEnter>"
+    "enter": "<Enter>",
+    "return": "<Enter>"
 ]
 
-let mergedCommands = $.merge(insertCommands) //letter //ones, teens, something)
+let mergedCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands)
 
 let completeCommands = mapDict(mergedCommands, Parser)
 

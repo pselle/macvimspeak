@@ -42,7 +42,11 @@ public typealias KeySet = Array<UInt16>
 public func Parser(keyset:String) -> Array<KeySet> {
     var set: Array<KeySet> = [] // [[0x00]]
     println("---- PARSER CALLED")
-    return inner(set, keyset)
+    if(countElements(keyset) == 1) {
+        return checkSingleChar(keyset, set)
+    } else {
+        return inner(set, keyset)
+    }
 }
 
 public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
@@ -67,14 +71,12 @@ public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
 
 internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> {
     var set: Array<KeySet> = oldSet
-    // Symbols and lowercase letters
-    if Regex("\\W?[a-z]").test(c) {
-        let keys:KeySet = KeyBatch(lookupKey(c)).batch
-        set.append(keys)
-    }
-        
-    else if Regex("[A-Z]").test(c) {
+    println(c)
+    if Regex("[A-Z]").test(c) { // test for capital letters
         let keys:KeySet = [KeyCode["Shift"]!, lookupKey(c)]
+        set.append(keys)
+    } else { // lowercase and symbols
+        let keys:KeySet = KeyBatch(lookupKey(c)).batch
         set.append(keys)
     }
     return set

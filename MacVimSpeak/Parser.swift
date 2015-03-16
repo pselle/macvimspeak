@@ -41,7 +41,7 @@ public typealias KeySet = Array<UInt16>
 
 public func Parser(keyset:String) -> Array<KeySet> {
     var set: Array<KeySet> = [] // [[0x00]]
-    println("---- PARSER CALLED")
+//    println("---- PARSER CALLED")
     if(countElements(keyset) == 1) {
         return checkSingleChar(keyset, set)
     } else {
@@ -50,7 +50,6 @@ public func Parser(keyset:String) -> Array<KeySet> {
 }
 
 public func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
-    println("inner", remaining)
     if(remaining == "") {
         return set
     } else {
@@ -62,7 +61,6 @@ public func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
             (updatedSet, nextString) = parseCombo(set, remaining)
         } else {
             updatedSet = checkSingleChar(firstChar, set)
-            println(updatedSet)
             nextString = (remaining as NSString).substringFromIndex(1)
         }
         return parseKeys(updatedSet, nextString)
@@ -71,7 +69,7 @@ public func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
 
 internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> {
     var set: Array<KeySet> = oldSet
-    println(c)
+//    println(c)
     if Regex("[A-Z]").test(c) { // test for capital letters
         let keys:KeySet = [KeyCode["Shift"]!, lookupKey(c)]
         set.append(keys)

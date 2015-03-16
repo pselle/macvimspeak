@@ -323,7 +323,7 @@ struct VoiceCommands {
     init() {
         let countedCommands = combineDictionaries(number, countedAction, "-")
         let commandLineWithEnter = mapDict(commandLine, addEnter)
-        allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands, commandLineWithEnter, countedCommands)
+        allCommands = $.merge(number, letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands, commandLineWithEnter, countedCommands)
     }
 }
 

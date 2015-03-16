@@ -8,7 +8,7 @@
 
 import Foundation
 
-// from http://benscheirman.com/2014/06/regex-in-swift/
+// from http://benscheirman.com/2014/06/regex-in-swift/, with the case-insensitve flag removed
 public class Regex {
     let internalExpression: NSRegularExpression
     let pattern: String
@@ -45,11 +45,11 @@ public func Parser(keyset:String) -> Array<KeySet> {
     if(countElements(keyset) == 1) {
         return checkSingleChar(keyset, set)
     } else {
-        return inner(set, keyset)
+        return parseKeys(set, keyset)
     }
 }
 
-public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
+public func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
     println("inner", remaining)
     if(remaining == "") {
         return set
@@ -59,13 +59,13 @@ public func inner(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
         let firstChar = (remaining as NSString).substringToIndex(1)
         if (firstChar == "<") {
             // We have us a sequence!
-            (updatedSet, nextString) = parseCombo(set, remaining) // setting this to updatedSet and nextString didn't work
+            (updatedSet, nextString) = parseCombo(set, remaining)
         } else {
             updatedSet = checkSingleChar(firstChar, set)
             println(updatedSet)
             nextString = (remaining as NSString).substringFromIndex(1)
         }
-        return inner(updatedSet, nextString)
+        return parseKeys(updatedSet, nextString)
     }
 }
 
@@ -82,11 +82,10 @@ internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> 
     return set
 }
 
-func parseCombo(oldSet:Array<KeySet>, string:String) -> (Array<KeySet>, String) {
+internal func parseCombo(oldSet:Array<KeySet>, string:String) -> (Array<KeySet>, String) {
     var set = oldSet
     let endingChar = (string as NSString).rangeOfString(">")
     let comboString = (string as NSString).substringWithRange(NSMakeRange(1,endingChar.location-1))
-    println(comboString)
     let comboArray = comboString.componentsSeparatedByString("-")
     var keys:KeySet = []
     for c in comboArray {
@@ -104,11 +103,3 @@ internal func lookupKey(char: String) -> UInt16 {
         return KeyCode[lookup]!
     }
 }
-// handle modifier key sequences:
-// special = mystring.match(<.*>)
-// special = - -> [[]]
-// special = [[1,2]]
-// return [[1,2]], 7 (number of characters)
-
-/// "gg<C-v>" -> [[KeyCode.G], [KeyCode.G], [KeyCode.Control, KeyCode.V]]
-//  "<Enter>" -> [[KeyCode.Enter]]

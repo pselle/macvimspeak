@@ -20,8 +20,8 @@ let vimCommands = $.merge(completeCommands).keys.array //ones, teens, something)
 func executeKeyCommands(keys: [KeySet]) {
     println("===============ExecuteKeyCommands called")
     for keySet in keys {
-            println("key set is", keySet)
-            executeMultiKey(keySet)
+        println("key set is", keySet)
+        executeMultiKey(keySet)
     }
 }
 
@@ -32,11 +32,17 @@ func executeMultiKey(keys: [UInt16]) {
 }
 
 func pressKeys(keys:[UInt16]) {
-    for key in keys {
-        println("Down", key)
-        let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
-        //CGEventSetFlags(keyDown, CGEventFlags(kCGEventFlagMaskShift))
+    if(keys[0] == 56) {
+        println("Down with shift")
+        let keyDown = CGEventCreateKeyboardEvent(src, keys[1], true).takeRetainedValue()
+        CGEventSetFlags(keyDown, CGEventFlags(kCGEventFlagMaskShift))
         CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
+    } else {
+        for key in keys {
+            println("Down", key)
+            let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
+            CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
+        }
     }
 }
 

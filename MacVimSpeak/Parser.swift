@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Dollar
 
 // from http://benscheirman.com/2014/06/regex-in-swift/, with the case-insensitve flag removed
 class Regex {
@@ -70,7 +71,9 @@ internal func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
 internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> {
     var set: Array<KeySet> = oldSet
 //    println(c)
-    if Regex("[A-Z]").test(c) { // test for capital letters
+    let symbolsRequiringShift = ["<", ">", "{", "}", ")", "(", "!", "|", ":", "`", "'", "&", "%", "?", "*", "~", "@", "$", "^", "+", "#"]
+
+    if (Regex("[A-Z]").test(c) || $.contains(symbolsRequiringShift, value: c)) { // test for capital letters or the symbols above
         let keys:KeySet = [KeyCode["Shift"]!, lookupKey(c)]
         set.append(keys)
     } else { // lowercase and symbols

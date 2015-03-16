@@ -199,8 +199,8 @@ struct VoiceCommands {
         "cursor-last":                    "L",
         "start-of-document":              "gg",
         "end-of-document":                "G",
-        "retrace-movements":              "<C-o>", // <Control-[letter]>
-        "retrace-movements-forward":      "<C-i>",
+        "retrace-movements":              "<Control-o>", // <Control-[letter]>
+        "retrace-movements-forward":      "<Control-i>",
     ]
     
     let edit = [
@@ -234,7 +234,7 @@ struct VoiceCommands {
         "substitute-line":          "S",
         "undo":                     "u",
         "undo-line":                "U",
-        "redo":                     "<C-r>",
+        "redo":                     "<Control-r>",
         "erase":                    "x",
         "erase-reversed":           "X",
         "erase-back":               "X",
@@ -245,12 +245,12 @@ struct VoiceCommands {
         "put-above":                "P",
         "paste-above":              "P",
         "repeat":                   ".",
-        "scroll-up":                "<C-y>",
-        "scroll-down":              "<C-e>",
-        "page-down":                "<C-f>",
-        "page-up":                  "<C-b>",
-        "half-page-down":           "<C-d>",
-        "half-page-up":             "<C-u>",
+        "scroll-up":                "<Control-y>",
+        "scroll-down":              "<Control-e>",
+        "page-down":                "<Control-f>",
+        "page-up":                  "<Control-b>",
+        "half-page-down":           "<Control-d>",
+        "half-page-up":             "<Control-u>",
         "indent-line":              ">>",
         //    "unindent-line":            "<<", Not covered in parser atm
         "toggle-case":              "~",
@@ -269,7 +269,7 @@ struct VoiceCommands {
     ]
     
     let nonCountedAction = [
-        "display-current-line-number": "<C-g>",
+        "display-current-line-number": "<Control-g>",
         "delete-remaining-line": "D",
         "change-remaining-line": "C",
         "change-line":           "cc",
@@ -286,8 +286,8 @@ struct VoiceCommands {
         "select-line":           "V",
         "visual-all":            "ggVG",
         "select-all":            "ggVG",
-        "visual-block":          "<C-v>",
-        "select-block":          "<C-v>",
+        "visual-block":          "<Control-v>",
+        "select-block":          "<Control-v>",
         "scroll-top":            "zt",
         "scroll-middle":         "zz",
         "scroll-botton":         "zb",

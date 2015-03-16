@@ -322,5 +322,6 @@ struct VoiceCommands {
     
     init() {
         allCommands = $.merge(letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands)
+        // countedCommands: compose numbers + counted commands into new setof commands
     }
 }

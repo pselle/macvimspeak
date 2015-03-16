@@ -35,6 +35,7 @@ func pressKeys(keys:[UInt16]) {
     for key in keys {
         println("Down", key)
         let keyDown = CGEventCreateKeyboardEvent(src, key, true).takeRetainedValue()
+        //CGEventSetFlags(keyDown, CGEventFlags(kCGEventFlagMaskShift))
         CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyDown)
     }
 }
@@ -44,7 +45,6 @@ func liftKeys(keys:[UInt16]) {
         println("Up", key)
         let keyUp = CGEventCreateKeyboardEvent(src, key, false).takeRetainedValue()
         CGEventPost(CGEventTapLocation(kCGHIDEventTap), keyUp)
-        
     }
 }
 

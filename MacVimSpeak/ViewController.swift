@@ -50,6 +50,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         } else {
             println("Command not found!")
         }
+        // if let keyStrokes in modifierCommands executeKeyCommandsWithShift
         
         // else state is asleep
         // if command is Yo, then wake up and set commands to the commands

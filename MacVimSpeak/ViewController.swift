@@ -12,7 +12,8 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     let speechListener = NSSpeechRecognizer()
     let s = NSSpeechSynthesizer()
     var isSpeaking = false
-    @IBOutlet weak var ListeningButton: NSButton!
+    @IBOutlet weak var listeningButton: NSButton!
+    @IBOutlet weak var commandDisplay: NSTextField!
     
     @IBAction func ListenButton(sender: AnyObject) {
         toggleSpeakingStatus()
@@ -22,11 +23,11 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     func toggleSpeakingStatus() {
         if(!isSpeaking) {
             speechListener.startListening()
-            ListeningButton.title = "Stop Listening"
+            listeningButton.title = "Stop Listening"
             isSpeaking = true
         } else {
             speechListener.stopListening()
-            ListeningButton.title = "Start Listening"
+            listeningButton.title = "Start Listening"
             isSpeaking = false
         }
     }
@@ -55,6 +56,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         } else {
             if let keyStrokes = completeCommands[command as String] {
                 executeKeyCommands(keyStrokes)
+                commandDisplay.stringValue = voiceCommands.allCommands[command as String]!
             } else {
                 println("Command not found!")
             }

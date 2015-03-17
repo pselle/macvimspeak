@@ -52,7 +52,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         if(command as String == "shush" || command as String == "quiet-you") {
             speechListener.commands = ["wake up"]
         } else if (command as String == "wake up") {
-            speechListener.commands = vimCommands
+            speechListener.commands = vimCommands + ["shush", "quiet-you"]
         } else {
             if let keyStrokes = completeCommands[command as String] {
                 executeKeyCommands(keyStrokes)

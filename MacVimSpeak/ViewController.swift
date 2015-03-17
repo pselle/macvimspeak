@@ -12,6 +12,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     let speechListener = NSSpeechRecognizer()
     let s = NSSpeechSynthesizer()
     var isSpeaking = false
+    @IBOutlet weak var ListeningButton: NSButton!
     
     @IBAction func ListenButton(sender: AnyObject) {
         toggleSpeakingStatus()
@@ -21,9 +22,11 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     func toggleSpeakingStatus() {
         if(!isSpeaking) {
             speechListener.startListening()
+            ListeningButton.title = "Stop Listening"
             isSpeaking = true
         } else {
             speechListener.stopListening()
+            ListeningButton.title = "Start Listening"
             isSpeaking = false
         }
     }
@@ -34,8 +37,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         speechListener.commands = vimCommands + ["shush", "quiet-you"]
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
-        speechListener.startListening()
-        isSpeaking = true
+        toggleSpeakingStatus()
     }
 
     override var representedObject: AnyObject? {

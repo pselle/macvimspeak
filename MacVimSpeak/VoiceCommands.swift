@@ -12,6 +12,8 @@ import Dollar
 
 struct VoiceCommands {
     let allCommands: [String:String]
+    let keyCodeCommands: [String:Array<KeySet>]
+    let voiceCommands: [String]
     
     // Numbers must be said separately before their following motion, ex. "One" ... "Down"
     let number = [
@@ -355,6 +357,9 @@ struct VoiceCommands {
             countedAction, nonCountedAction, insertCommands,
             commandLineWithEnter, countedCommands,
             countedNavigation, countedEdit)
+
+        keyCodeCommands = mapDict(allCommands, Parser)
+        voiceCommands = allCommands.keys.array + ["shush"]
     }
 }
 

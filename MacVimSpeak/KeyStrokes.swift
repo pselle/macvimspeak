@@ -12,11 +12,6 @@ import Dollar
 // I'm not 100% sure what this is, but gotta have it!
 let src = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()
 
-let voiceCommands = VoiceCommands()
-let completeCommands = mapDict(voiceCommands.allCommands, Parser)
-let vimCommands = $.merge(completeCommands).keys.array //ones, teens, something)
-
-
 func executeKeyCommands(keys: [KeySet]) {
     println("===============ExecuteKeyCommands called")
     for keySet in keys {

@@ -11,6 +11,7 @@ import Cocoa
 class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     let speechListener = NSSpeechRecognizer()
     let s = NSSpeechSynthesizer()
+    let vc = VoiceCommands()
     var isSpeaking = true
     @IBOutlet weak var listeningButton: NSButton!
     @IBOutlet weak var commandDisplay: NSTextField!
@@ -37,7 +38,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         super.viewDidLoad()
 
         view.wantsLayer = true
-        speechListener.commands = vimCommands + ["shush", "quiet-you"]
+        speechListener.commands = vc.voiceCommands
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
         toggleSpeakingStatus()
@@ -49,18 +50,18 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         }
     }
 
-    func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: AnyObject?) {
+    func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: String!) {
         println("Got to speech recognizer")
-        if(command as String == "shush" || command as String == "quiet-you") {
+        if(command == "shush") {
             commandDisplay.stringValue = "shushed"
             speechListener.commands = ["wake up"]
-        } else if (command as String == "wake up") {
-            speechListener.commands = vimCommands + ["shush", "quiet-you"]
+        } else if (command == "wake up") {
+            speechListener.commands = vc.voiceCommands
             commandDisplay.stringValue = ""
         } else {
-            if let keyStrokes = completeCommands[command as String] {
+            if let keyStrokes = vc.keyCodeCommands[command] {
                 executeKeyCommands(keyStrokes)
-                commandDisplay.stringValue = voiceCommands.allCommands[command as String]!
+                commandDisplay.stringValue = vc.allCommands[command]!
             } else {
                 println("Command not found!")
             }

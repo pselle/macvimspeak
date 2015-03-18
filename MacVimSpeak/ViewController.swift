@@ -17,7 +17,6 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     
     @IBAction func ListenButton(sender: AnyObject) {
         toggleSpeakingStatus()
-        println("huzzah button!")
     }
 
     func toggleSpeakingStatus() {
@@ -53,9 +52,11 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: AnyObject?) {
         println("Got to speech recognizer")
         if(command as String == "shush" || command as String == "quiet-you") {
+            commandDisplay.stringValue = "shushed"
             speechListener.commands = ["wake up"]
         } else if (command as String == "wake up") {
             speechListener.commands = vimCommands + ["shush", "quiet-you"]
+            commandDisplay.stringValue = ""
         } else {
             if let keyStrokes = completeCommands[command as String] {
                 executeKeyCommands(keyStrokes)

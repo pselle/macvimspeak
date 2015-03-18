@@ -306,7 +306,8 @@ struct VoiceCommands {
         "save":                     ":w",
         "quit":                     ":q",
         "save-and-quit":            ":x",
-        "quit-without-saving":      ":q!"
+        "quit-without-saving":      ":q!",
+        "escape":                   "<Escape>"
 //        "set-number":               ":set nu",
 //        "set-no-number":            ":set nonu",
 //        "set-highlight-search":     ":set hls",

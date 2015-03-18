@@ -11,7 +11,7 @@ import Cocoa
 class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     let speechListener = NSSpeechRecognizer()
     let s = NSSpeechSynthesizer()
-    var isSpeaking = false
+    var isSpeaking = true
     @IBOutlet weak var listeningButton: NSButton!
     @IBOutlet weak var commandDisplay: NSTextField!
     
@@ -21,22 +21,24 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     }
 
     func toggleSpeakingStatus() {
-        if(!isSpeaking) {
-            speechListener.startListening()
-            listeningButton.title = "Stop Listening"
-            isSpeaking = true
-        } else {
+        if(isSpeaking) {
             speechListener.stopListening()
+            view.layer?.backgroundColor = NSColor.redColor().CGColor
             listeningButton.title = "Start Listening"
             isSpeaking = false
+        } else {
+            speechListener.startListening()
+            view.layer?.backgroundColor = NSColor.greenColor().CGColor
+            listeningButton.title = "Stop Listening"
+            isSpeaking = true
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.wantsLayer = true
         speechListener.commands = vimCommands + ["shush", "quiet-you"]
-        println(countElements(vimCommands))
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
         toggleSpeakingStatus()

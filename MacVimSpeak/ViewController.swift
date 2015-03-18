@@ -36,6 +36,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         super.viewDidLoad()
 
         speechListener.commands = vimCommands + ["shush", "quiet-you"]
+        println(countElements(vimCommands))
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
         toggleSpeakingStatus()

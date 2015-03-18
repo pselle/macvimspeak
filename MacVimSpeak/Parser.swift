@@ -70,7 +70,6 @@ internal func parseKeys(set: Array<KeySet>, remaining:String) -> Array<KeySet> {
 
 internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> {
     var set: Array<KeySet> = oldSet
-//    println(c)
     let symbolsRequiringShift = ["<", ">", "{", "}", ")", "(", "!", "|", ":", "`", "'", "&", "%", "?", "*", "~", "@", "$", "^", "+", "#"]
 
     if (Regex("[A-Z]").test(c) || $.contains(symbolsRequiringShift, value: c)) { // test for capital letters or the symbols above
@@ -85,15 +84,23 @@ internal func checkSingleChar(c: String, oldSet:Array<KeySet>) -> Array<KeySet> 
 
 internal func parseCombo(oldSet:Array<KeySet>, string:String) -> (Array<KeySet>, String) {
     var set = oldSet
-    let endingChar = (string as NSString).rangeOfString(">")
-    let comboString = (string as NSString).substringWithRange(NSMakeRange(1,endingChar.location-1))
-    let comboArray = comboString.componentsSeparatedByString("-")
     var keys:KeySet = []
-    for c in comboArray {
-        keys.append(lookupKey(c))
+    let endingChar = (string as NSString).rangeOfString(">")
+    if(endingChar.length > 0) {
+        let comboString = (string as NSString).substringWithRange(NSMakeRange(1,endingChar.location-1))
+        let comboArray = comboString.componentsSeparatedByString("-")
+        for c in comboArray {
+            keys.append(lookupKey(c))
+        }
+        set.append(keys)
+        return (set, (string as NSString).substringFromIndex(endingChar.location+1))
+    } else {
+        // We don't actually have a combo string, just a < action
+        keys.append(lookupKey("<"))
+        set.append(keys)
+        return (set, (string as NSString).substringFromIndex(1))
     }
-    set.append(keys)
-    return (set, (string as NSString).substringFromIndex(endingChar.location+1))
+
 }
 
 internal func lookupKey(char: String) -> UInt16 {

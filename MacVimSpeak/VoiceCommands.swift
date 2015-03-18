@@ -158,11 +158,13 @@ struct VoiceCommands {
         "right-paren":            ")"
     ]
     
-    let navigate = [
+    let countedNavigate = [
         "back":                           "b",
         "back-word":                      "b",
         "big-back":                       "B",
         "big-back-word":                  "B",
+        "word":                           "w",
+        "big-word":                       "W",
         "end":                            "e",
         "big-end":                        "E",
         "back-end":                       "ge",
@@ -170,7 +172,10 @@ struct VoiceCommands {
         "left":                           "h",
         "down":                           "j",
         "up":                             "k",
-        "right":                          "l",
+        "right":                          "l"
+    ]
+    
+    let navigate = [
         "next":                           "n",
         "next-reversed":                  "N",
         "previous":                       "N",
@@ -322,8 +327,12 @@ struct VoiceCommands {
     
     init() {
         let countedCommands = combineDictionaries(number, countedAction, "-")
+        let countedNavigation = combineDictionaries(number, countedNavigate, " ")
+        let countedEdit = combineDictionaries(edit, countedNavigation, " ")
         let commandLineWithEnter = mapDict(commandLine, addEnter)
-        allCommands = $.merge(number, letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands, commandLineWithEnter, countedCommands)
+        allCommands = $.merge(number, letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands,
+            commandLineWithEnter, countedCommands,
+            countedNavigation, countedEdit)
     }
 }
 

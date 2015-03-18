@@ -12,26 +12,24 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
     let speechListener = NSSpeechRecognizer()
     let s = NSSpeechSynthesizer()
     let vc = VoiceCommands()
-    var isSpeaking = true
+    var isSpeaking:Bool! {
+        didSet {
+            if isSpeaking == true {
+                speechListener.startListening()
+                view.layer?.backgroundColor = NSColor.greenColor().CGColor
+                listeningButton.title = "Stop Listening"
+            } else {
+                speechListener.stopListening()
+                view.layer?.backgroundColor = NSColor.redColor().CGColor
+                listeningButton.title = "Start Listening"
+            }
+        }
+    }
     @IBOutlet weak var listeningButton: NSButton!
     @IBOutlet weak var commandDisplay: NSTextField!
     
     @IBAction func ListenButton(sender: AnyObject) {
-        toggleSpeakingStatus()
-    }
-
-    func toggleSpeakingStatus() {
-        if(isSpeaking) {
-            speechListener.stopListening()
-            view.layer?.backgroundColor = NSColor.redColor().CGColor
-            listeningButton.title = "Start Listening"
-            isSpeaking = false
-        } else {
-            speechListener.startListening()
-            view.layer?.backgroundColor = NSColor.greenColor().CGColor
-            listeningButton.title = "Stop Listening"
-            isSpeaking = true
-        }
+        isSpeaking = !isSpeaking
     }
 
     override func viewDidLoad() {
@@ -41,7 +39,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         speechListener.commands = vc.voiceCommands
         speechListener.listensInForegroundOnly = false
         speechListener.delegate = self
-        toggleSpeakingStatus()
+        isSpeaking = false
     }
 
     override var representedObject: AnyObject? {

@@ -208,9 +208,7 @@ struct VoiceCommands {
         "retrace-movements-forward":      "<Control-i>",
     ]
     
-    let edit = [
-        "change":        "c",
-        "delete":        "d",
+    let unModifiedEdit = [
         "indent":        "<",
         "unindent":      ">",
         "join":          "J",
@@ -218,9 +216,28 @@ struct VoiceCommands {
         "put":           "p",
         "paste":         "p",
         "undo":          "u",
-        "redo":          "<C-r>",
+        "redo":          "<C-r>"
+    ]
+    
+    let edit = [
+        "change":        "c",
+        "delete":        "d",
         "yank":          "y",
         "copy":          "y"
+    ]
+    
+    let area = [
+        "around":       "a",
+        "inside":       "i"
+    ]
+    
+    let areaModifiers = [
+        "word":         "w",
+        "tag":          "t",
+        "quote":        "\'",
+        "double-quote": "\"",
+        "parentheses":  "(",
+        "bracket":      "["
     ]
     
     // Join these with numbers, in addition to alone
@@ -327,11 +344,15 @@ struct VoiceCommands {
     ]
     
     init() {
+        let editArea = combineDictionaries(edit, combineDictionaries(area, areaModifiers, " "), " ")
+        
         let countedCommands = combineDictionaries(number, countedAction, "-")
         let countedNavigation = combineDictionaries(number, countedNavigate, " ")
         let countedEdit = combineDictionaries(edit, countedNavigation, " ")
         let commandLineWithEnter = mapDict(commandLine, addEnter)
-        allCommands = $.merge(number, letter, symbol, navigate, edit, countedAction, nonCountedAction, insertCommands,
+        allCommands = $.merge(number, letter, symbol, navigate,
+            unModifiedEdit, edit, editArea,
+            countedAction, nonCountedAction, insertCommands,
             commandLineWithEnter, countedCommands,
             countedNavigation, countedEdit)
     }

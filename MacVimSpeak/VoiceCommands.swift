@@ -10,9 +10,19 @@
 import Foundation
 import Dollar
 
+/**
+    Contains all voice command objects including
+
+    - allCommands: [String:String], for raw string values
+    - keyCodeCommands: [String:Array<KeySet>], for looking up keys
+    - voiceCommands: [String], for NSSpeechRecognizer
+*/
 struct VoiceCommands {
+    /// Key-values of voice command: string keycodes
     let allCommands: [String:String]
+    /// Key-values of voice command: keycode sets
     let keyCodeCommands: [String:Array<KeySet>]
+    /// Array of voice commands
     let voiceCommands: [String]
     
     // Numbers must be said separately before their following motion, ex. "One" ... "Down"
@@ -352,6 +362,7 @@ struct VoiceCommands {
         let countedNavigation = combineDictionaries(number, countedNavigate, " ")
         let countedEdit = combineDictionaries(edit, countedNavigation, " ")
         let commandLineWithEnter = mapDict(commandLine, addEnter)
+
         allCommands = $.merge(number, letter, symbol, navigate,
             unModifiedEdit, edit, editArea,
             countedAction, nonCountedAction, insertCommands,

@@ -8,7 +8,13 @@
 
 import Cocoa
 
-// Listening states
+/**
+    Listening states
+
+    - Awake: Receiving commands, including shushed
+    - Shushed: Receiving commands but not executing, wakes up on "wake up"
+    - NotListening: Speech recognition is not running
+*/
 enum ListeningState {
     case Awake, Shushed, NotListening
 }

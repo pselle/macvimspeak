@@ -1,2 +1,13 @@
 .DS_Store
 Carthage/Build
+# http://stackoverflow.com/questions/49478/git-ignore-file-for-xcode-projects
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+xcuserdata

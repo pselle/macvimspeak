@@ -359,7 +359,7 @@ struct VoiceCommands {
             countedNavigation, countedEdit)
 
         keyCodeCommands = mapDict(allCommands, Parser)
-        voiceCommands = allCommands.keys.array + ["shush"]
+        voiceCommands = allCommands.keys.array + ["shush", "wake up"]
     }
 }
 

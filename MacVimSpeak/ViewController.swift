@@ -9,9 +9,17 @@
 import Cocoa
 
 class ViewController: NSViewController, NSSpeechRecognizerDelegate {
-    let speechListener = NSSpeechRecognizer()
+    lazy var speechListener: NSSpeechRecognizer = {
+        let speechListener = NSSpeechRecognizer()
+        speechListener.commands = self.vc.voiceCommands
+        speechListener.listensInForegroundOnly = false
+        speechListener.delegate = self
+        return speechListener
+    }()
+
     let s = NSSpeechSynthesizer()
     let vc = VoiceCommands()
+
     var isSpeaking:Bool! {
         didSet {
             if isSpeaking == true {
@@ -25,6 +33,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
             }
         }
     }
+
     @IBOutlet weak var listeningButton: NSButton!
     @IBOutlet weak var commandDisplay: NSTextField!
     
@@ -36,9 +45,7 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         super.viewDidLoad()
 
         view.wantsLayer = true
-        speechListener.commands = vc.voiceCommands
-        speechListener.listensInForegroundOnly = false
-        speechListener.delegate = self
+
         isSpeaking = false
     }
 

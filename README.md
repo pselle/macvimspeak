@@ -19,7 +19,7 @@ It's a good idea using this to turn on show commands in your Vim setup, so you c
 You may need to download some (all native) OS X accessibility tools for your machine to run app if you haven't used native dictation before.
 
 ### Authors, Contributors, and Credits
-Developed by @pselle. This project is largely inspired by (and is essentially a Mac port of) Ashley Feniello (@AshleyF)'s [VimSpeak](https://github.com/AshleyF/VimSpeak) project. 
+Developed by Pam Selle. This project is largely inspired by (and is essentially a Mac port of) Ashley Feniello (@AshleyF)'s [VimSpeak](https://github.com/AshleyF/VimSpeak) project. 
 
 Speech icon by Stephen JB Thomas from [The Noun Project](https://thenounproject.com).
 

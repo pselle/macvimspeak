@@ -297,6 +297,7 @@ Full-Width Styles
 
 #header_wrap .inner {
   padding: 50px 10px 30px 10px;
+  background: url('../images/macvimspeak-logo.png') 0 50px no-repeat;
 }
 
 #project_title {
@@ -305,6 +306,7 @@ Full-Width Styles
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+  text-align: center;
 }
 
 #project_tagline {
@@ -313,11 +315,12 @@ Full-Width Styles
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
+  text-align: center;
 }
 
 #downloads {
   position: absolute;
-  width: 210px;
+  width: 120px; /*210px;*/
   z-index: 10;
   bottom: -40px;
   right: 0;

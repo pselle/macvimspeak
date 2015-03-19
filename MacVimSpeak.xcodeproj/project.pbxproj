@@ -17,6 +17,8 @@
 		8279712E1AA656210091B8DC /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8279712D1AA656210091B8DC /* KeyCode.swift */; };
 		82BB31DE1AB726C5009A1686 /* VoiceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31DD1AB726C5009A1686 /* VoiceCommands.swift */; };
 		82BB31E21AB72BA8009A1686 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31E11AB72BA8009A1686 /* Utils.swift */; };
+		82C3815A1ABB2DFD006A17EB /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
+		82C3815B1ABB2DFD006A17EB /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 824E0F671AA0EA2E002AC519;
 			remoteInfo = MacVimSpeak;
+		};
+		82C3815C1ABB2DFD006A17EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 82CCB9981AADFA8600D6B9D2 /* Dollar.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 92E0D03B19467C67002ACC3D;
+			remoteInfo = Dollar;
 		};
 		82CCB99D1AADFA8700D6B9D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -51,6 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				82C3815B1ABB2DFD006A17EB /* Dollar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C3815A1ABB2DFD006A17EB /* Dollar.framework in Frameworks */,
 				82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +198,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				82C3815D1ABB2DFD006A17EB /* PBXTargetDependency */,
 			);
 			name = MacVimSpeak;
 			productName = MacVimSpeak;
@@ -321,6 +333,11 @@
 			target = 824E0F671AA0EA2E002AC519 /* MacVimSpeak */;
 			targetProxy = 824E0F7B1AA0EA2E002AC519 /* PBXContainerItemProxy */;
 		};
+		82C3815D1ABB2DFD006A17EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Dollar;
+			targetProxy = 82C3815C1ABB2DFD006A17EB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -418,6 +435,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -434,6 +452,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",

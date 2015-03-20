@@ -1,6 +1,6 @@
 # MacVimSpeak
 
-MacVimSpeak is an OS X app that allows you to "say" Vim commands and the app will execute the corresponding key mappings for Vim. This is also a good way to learn about Vim, because those simple keystroke commands map to words! (ex. a for after, A for after [end of] a line).
+MacVimSpeak is an OS X app that allows you to "say" Vim commands and the app will execute the corresponding key mappings for Vim. This is also a good way to learn about Vim, because those simple keystroke commands map to words! (ex. a for append, A for append at end of line).
 
 To use the app:
 

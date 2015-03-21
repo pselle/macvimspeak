@@ -255,6 +255,7 @@ struct VoiceCommands {
     ]
     
     // Join these with numbers, in addition to alone
+    // TODO: Determine if I should modify combineDictionaries to add original dict unmodified
     let countedAction = [
         "after":                    "a",
         "append":                   "a",

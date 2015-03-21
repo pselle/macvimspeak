@@ -167,7 +167,8 @@ struct VoiceCommands {
         "right-square-bracket":   "]",
         "right-bracket":          "]",
         "right-parenthesis":      ")",
-        "right-paren":            ")"
+        "right-paren":            ")",
+        "escape":                 "<Escape>"
     ]
     
     let countedNavigate = [
@@ -216,8 +217,8 @@ struct VoiceCommands {
         "cursor-last":                    "L",
         "start-of-document":              "gg",
         "end-of-document":                "G",
-        "retrace-movements":              "<Control-o>", // <Control-[letter]>
-        "retrace-movements-forward":      "<Control-i>",
+        "retrace-movements":              "<Control-o>",
+        "retrace-movements-forward":      "<Control-i>"
     ]
     
     let unModifiedEdit = [
@@ -228,7 +229,8 @@ struct VoiceCommands {
         "put":           "p",
         "paste":         "p",
         "undo":          "u",
-        "redo":          "<C-r>"
+        "redo":          "<C-r>",
+        "change word":   "cw"
     ]
     
     let edit = [
@@ -335,8 +337,7 @@ struct VoiceCommands {
         "save":                     ":w",
         "quit":                     ":q",
         "save-and-quit":            ":x",
-        "quit-without-saving":      ":q!",
-        "escape":                   "<Escape>"
+        "quit-without-saving":      ":q!"
 //        "set-number":               ":set nu",
 //        "set-no-number":            ":set nonu",
 //        "set-highlight-search":     ":set hls",
@@ -367,6 +368,7 @@ struct VoiceCommands {
             unModifiedEdit, edit, editArea,
             countedAction, nonCountedAction, insertCommands,
             commandLineWithEnter, countedCommands,
+            countedNavigate,
             countedNavigation, countedEdit)
 
         keyCodeCommands = mapDict(allCommands, Parser)

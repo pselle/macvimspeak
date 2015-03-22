@@ -25,6 +25,8 @@ struct VoiceCommands {
     /// Array of voice commands
     let voiceCommands: [String]
     
+    // TODO: Modes, visual, insert (these exist, reorg), normal (escape), command (:)
+
     // Numbers must be said separately before their following motion, ex. "One" ... "Down"
     let number = [
         "one":       "1",

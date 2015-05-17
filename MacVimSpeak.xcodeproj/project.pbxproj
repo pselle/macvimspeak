@@ -19,7 +19,6 @@
 		82BB31E21AB72BA8009A1686 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BB31E11AB72BA8009A1686 /* Utils.swift */; };
 		82C3815A1ABB2DFD006A17EB /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
 		82C3815B1ABB2DFD006A17EB /* Dollar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CCB99E1AADFA8700D6B9D2 /* Dollar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +90,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C3815A1ABB2DFD006A17EB /* Dollar.framework in Frameworks */,
-				82CCB9A21AADFABF00D6B9D2 /* Dollar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -64,38 +64,36 @@ class ViewController: NSViewController, NSSpeechRecognizerDelegate {
         isSpeaking = false
     }
 
-    func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: String!) {
-        println("Got to speech recognizer", command)
-
-        // Guard for sleep and wake up states
-        switch (command, listeningState) {
-        case ("wake up", .Shushed):
-            commandDisplay.stringValue = "hello again!"
-            listeningState = .Awake
-            return
-        case ("shush", .Awake):
-            commandDisplay.stringValue = "shushed"
-            listeningState = .Shushed
-            return
-        default:
-            println("Processing keys")
+    func speechRecognizer(sender: NSSpeechRecognizer, didRecognizeCommand command: AnyObject?) {
+        if let command = command as? String {
+            println("Got to speech recognizer", command)
+            
+            // Guard for sleep and wake up states
+            switch (command, listeningState) {
+            case ("wake up", .Shushed):
+                commandDisplay.stringValue = "hello again!"
+                listeningState = .Awake
+                return
+            case ("shush", .Awake):
+                commandDisplay.stringValue = "shushed"
+                listeningState = .Shushed
+                return
+            default:
+                println("Processing keys")
+            }
+            
+            if listeningState == .Shushed {
+                return
+            }
+            
+            // Execute key commands if we're good to go
+            if let keyStrokes = vc.keyCodeCommands[command] {
+                executeKeyCommands(keyStrokes)
+                commandDisplay.stringValue = vc.allCommands[command]!
+            } else {
+                println("Command not found!")
+            }
         }
-
-        if listeningState == .Shushed {
-            return
-        }
-        
-        // Execute key commands if we're good to go
-        if let keyStrokes = vc.keyCodeCommands[command] {
-            executeKeyCommands(keyStrokes)
-            commandDisplay.stringValue = vc.allCommands[command]!
-        } else {
-            println("Command not found!")
-        }
-
-//        if(command as String == "hello") {
-//            s.startSpeakingString("Hello Pam")
-//        }
     }
 }
 

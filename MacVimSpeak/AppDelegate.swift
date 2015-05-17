@@ -25,13 +25,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func turnOnFloat() {
         showOnTopMenuItem.state = NSOnState
         showAsNormalMenuItem.state = NSOffState
-        let window: NSWindow = NSApp.windows[0] as NSWindow
+        let window: NSWindow = NSApp.windows[0] as! NSWindow
         window.level = Int(CGWindowLevelForKey(CGWindowLevelKey(kCGStatusWindowLevelKey)))
 
     }
     
     @IBAction func showWindowAsNormal(sender: AnyObject) {
-        let window: NSWindow = NSApp.windows[0] as NSWindow
+        let window: NSWindow = NSApp.windows[0] as! NSWindow
         window.level = Int(CGWindowLevelForKey(CGWindowLevelKey(kCGNormalWindowLevelKey)))
         showOnTopMenuItem.state = NSOffState
         showAsNormalMenuItem.state = NSOnState

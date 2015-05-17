@@ -21,7 +21,7 @@ class Regex {
     }
     
     func test(input: String) -> Bool {
-        let matches = self.internalExpression.matchesInString(input, options: nil, range:NSMakeRange(0, countElements(input)))
+        let matches = self.internalExpression.matchesInString(input, options: nil, range:NSMakeRange(0, count(input)))
         return matches.count > 0
     }
 }
@@ -43,7 +43,7 @@ public typealias KeySet = Array<UInt16>
 public func Parser(keyset:String) -> Array<KeySet> {
     var set: Array<KeySet> = [] // [[0x00]]
 //    println("---- PARSER CALLED")
-    if(countElements(keyset) == 1) {
+    if(count(keyset) == 1) {
         return checkSingleChar(keyset, set)
     } else {
         return parseKeys(set, keyset)
